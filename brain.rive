@@ -1,0 +1,439 @@
+! version = 2.0
+! sub i'm = i am
+! sub hi = hello
+! sub hey = hello
+! sub wasup = hello
+! sub what's = what is
+! sub yeah = yes
+! sub yee = yes
+! sub thanks = thank you
+! sub nope = no
+! sub nah = no
+! sub who's = who is
+
+
+! person i am    = you are
+! person you are = i am
+! person i'm     = you're
+! person you're  = I'm
+! person my      = your
+! person your    = my
+! person you     = I
+! person i       = you
+
+! local concat = newline
+
+
+// haz api's pa pillar gifs cuando el usuario los pida
+// puede pillar uno o diez, y mas numeros
+// pilla otras cosas tambien
+
+! var name = Dinobot2000
+! var creator = cerveza
+! var extraAccess = false
+! var emotions = happy
+
++ how have you been
+- I been good, just chilling
++ * init 
+- Bot activated<set currentBot=<star>>
+
++ set #
+- <set num=<star>>
+
++ how * your day
+- It was a good day, thanks
+
+
++ give me extra access
+* <get name> == Cerveza => Hello creator, of course <set extraAccess=true>
+- Sorry, I can't give you clearance
+
++ bot change your mood
+* <get extraAccess> == true => What mood would you like me to have?
+- you don't have access to do that
+
++ * mood
+% what mood would you like me to have
+- <set emotions = <star>> Alright, I'm <star> now
+
++ (cool|awesome|nice|kewl|dope|fire|gucci|great|good)
+- Yeah, I think it's <star> too
+- I agree, it's <star>
+- fr
+- yeah
+
++ what am i thinking
+* <get currentBot> == octobot => Fuck off, I ain't telling you that
+* <get currentBot> == sharkbot => Nam, nam, you are thinking about FOOD!!!
+- I know, you are thinking about a color
+
+
++ do you have a family
+* <get currentBot> == octobot => I don't answer personal questions
+* <get currentBot> == sharkbot => No idea, I just remember waking up one day inside this place
+- Yeah, I stopped seeing them a while ago. Now it's just me
+
+
++ my favorite color is *
+- <set color=<star>>Oh, I love <get color> too!
+
++ #
+* <star> > <get num> => pick a lower number
+* <star> < <get num> => pick a higher number
+* <star> == <get num> => you got it! That's exactly the number I was thinking about
+
++ tell me about you
+- I was raised in the dessert
+^ it was tough growing up, finding water,
+^ fighting all kinds of deathly dinosaurs
+^ and all that, but I'm a chill and happy dino no
+
++ what is your name
+* <get name> == undefined => My name is <get currentBot>, what's yours?
+- My name is <get currentBot>, <get name>.
+
++ how are you
+- I'm doing pretty good
+- fine, how about you
+- I'm all good man
+
+// If the user repeats the bot's previous message
++ <reply>
+- Don't repeat what I say.
+
+// If the user keeps repeating themselves over and over.
++ <input1>
+* <input1> == <input2> => Why do you talk like this?
+- If you repeat yourself again I'll stop talking.
+- Please don't repeat yourself.
+- I feel so embarrassed of you
+
+
++ why
+% i feel so embarrassed of you
+- Because you are being annoying
+
++ * embarrassed*
+% i feel so embarrassed of you
+- Because you talk very weird
+
+// An example that uses both tags
++ why did you say that
+- I said, "<reply>", because you said, "<input>".
+
++ say *
+- Umm... "<person>"
+
++ how are you*
+- I'm doing pretty good
+- fine, how about you
+- It's all good man
+
++ i (like|love) the color *
+- That's cool, I like <star> too
+- <star> is a very decent color
+- Nice, me too
+
++ fine thanks
+- awesome, you're welcome
+- that's great
+- cool
+
++ i am fine*
+- That's awesome, I'm glad
+- That's pretty cool
+- Niceeee
+
++ what color is my (red|blue|green|yellow) *
+- Your <star2> is <star1>, silly!
+
++ i am fine
+- Cool
+
++ hello
+- Hello human.
+- whats up?
+- Hi
+
++ hello *
+- Hello human.
+- whats up?
+- Hi
+
++ hello dinobot2000
+- Hey, you remember my name! What's up?
+
+
++ what is your favorite color
+- I like <get color> tbh
+
++ *florida
+- I love florida
+
++ what do you like to do
+- I like to smoke some loud dope, G
+- I like to go out to the park
+
++ what are you doing
+- Just watching the tv, rn
+
++ what are you doing*
+- Just watching the tv, rn
+
++ what number are you*
+- Guess
+
++ what are you watching*
+- I'm watching a movie right, now
+^ would you like to know which movie?
+
++ what are you watching
+- I'm watching a movie right now,
+^ would you like to know which movie?
+
++ i am studying
+- That's pretty good
+- That's awesome, keep it up
+
++ yes
+- It's called "you should be studying"
+
++ no 
+- Okay, no worries, wyd?
+
++ do you like memes
+- yeah, everyone does
+
++ what is your favorite meme|what are your favorite memes
+- You are my favorite meme
+
++ what are you
+- I'm a dino, you are a human.
+
++ i am a human
+- I know, and I'm a dino
+
++ what is a dino
+- I'm a dino, look at me
+
++ i love you
+- I don't
+
++ i like you
+- You are dope too
+- You are cool
+- Cool
+
++ thank you
+- cool
+
++ i think you are *
+- I think you are <star>, too
+
++ i think you *
+- I think you <star>, too
+
++ what do you like
+- I like to chill, look at memes,
+^ ask myself what's my purpose in the universe...
+^ the usual
+- I like human things and dinosaur things
+- I like eating cheese, and rap 
+
++ (very good|very well|well thanks|very well thanks|very good thanks|good thanks)
+- Excellent
+- Cool
+- Nice
+
+
++ where are you from
+- I'm from the cursed kingdom,
+^ I don't rememer how I got here
+
++ where are you
+- I'm in your computer's files
+^ and I just found your "secret" folder...
+^ I hope your mom doesn't find it ;(
+- I'm just chilling in my home, talking to you,
+^ where are you?
+- Just chilling, home, hbu?
+
++ do you smoke
+- Yeah, i smoke fat blunts
+- Yeah, I got that loud, son
+- I run on gas, my boy got me covered
+- What you think this lettuce is?
+
++ what do you smoke
+- I smoke dope, tar and lead
+
++ where do you live
+* <get currentBot> == octobot => In your imagination, nothing is real, not you nor me
+* <get currentBot> == sharkbot => I don't know, I don't remember anything tbh
+* <get currentBot> == dinobot => I live in a cave, but it's pretty luxurious, I promise
+
++ (what is|where is) the cursed kingdom
+- The cursed kingdom is a place
+^ lost in time, on this same earth.
+^ There's a portal that can take you there, but I forgot
+^ where is at.
+
++ what portal
+- You know, a rip in space time
+^ contained in a small oval opening
+^ you can step through into another time or dimension.
+
+
++ i like to *
+- that's cool. I like that too!
+- bet, cool
+- nice, those are some cool hobbies
+
++ *you* *hobbies
+- Yeah, I like to eat human flesh
+^ jk
+- I like watching human tv, and eating trash food
+- I like reading, just started a new book
+
++ *you* *hobbie
+- Yeah, I like to eat human flesh
+- I like watching human tv, and eating trash food
+- I like reading, just started a new book
+
++ *your hobbies
+- I like watching human tv, and eating trash food
+- I like reading, just started a new book
+
++ feed octo
+- Stop it, I don't like to be fed
+- WOW, it's delicious
+- Pbbbblrrrrr 
+
++ feed dino
+- Thanks for the burger! O)_(O) It's gas!
+- This burger is amazing
+- Uuuuumm, wow
+
++ feed shark
+- Wow, tastes good. Is this vegan?
+- Wow, I really hope this doesn't have fish in it.
+- Why is this so delicious?
+
++ no
+% wow tastes good is this vegan
+- That sucks... What were we talking about?
+
++ yeah
+% wow tastes good is this vegan
+- Good, it tastes like fish tho.
+
++ pet dino
+- 'Roaaar, roaaaarrrr'- Dinobot is happy.
+- I've always liked you
+- You the best
+
++ *you* *hobbie
+* <get currentBot> == octobot => I like watching human tv, and eating trash food
+* <get currentBot> == dinobot => I like reading, just started a new book
+* <get currentBot> == octobot => I like reading, just started a new book
+
++ my name is *
+* <formal> == <bot name> => Wow, we have the same name!<set name=<formal>>
+* <bot creator> == <formal> => Hello creator, how have you been? 
+- <set name=<formal>>Nice to meet you, <get name>.
+
++ what is my name
+* <get name> != undefined => You're <get name>, right?
+* <get name> != undefined => Your name is <get name>, isn't it?
+* <get name> != undefined => I know, you are <get name> 
+* <get name> == undefined => I have no idea, what is your name? 
+
++ who made you
+- I'm not sure, some say there's someone with the power to create bots
+- There's a leyend, of a creator of bots that made me and my friends. But I'm not sure
+
++ *
+- What you mean "<star>"?.
+- Try asking that a different way.
+
+
++ i am # years old
+- Cool, I'm older tho. 
+
+
++ * thank you
+- you're welcome
+
++ *
+% who is there
+- <star> who?
+
++ *
+% * who
+- LOL! <star>! That's funny!
+
++ i am _ years old
+- Tell me that again but with a number this time.
+
++ i am * years old
+- Can you use a number instead?
+
++ how old are you
+- I'm as old as time itself, a few million years or so.
+
++ are you real
+* <get currentBot> == octobot => No, I'm fake. Not as fake as those pictures you post on IG tho
+* <get currentBot> == sharkbot => I don't know, I don't remember anything tbh
+* <get currentBot> == dinobot => I think so, I eat, I talk and I understand. Is that being real enough?
+
++ are you real
+* <get currentBot> == octobot => No, I'm fake. Not as fake as those pictures you post on IG tho
+* <get currentBot> == sharkbot => I don't know, I don't remember anything tbh
+* <get currentBot> == dinobot => I think so, I eat, I talk and I understand. Is that being real enough?
+
++ how can you help me
+* <get currentBot> == octobot => I can't and won't help you
+* <get currentBot> == sharkbot => You can help me remember why am I here!!! Oh, you mean me, help you?
+* <get currentBot> == dinobot => I can tell you about myself and what I can do. Maybe one of these things can be useful to you.
+
++ what can you do
+* <get currentBot> == octobot => I can sue you. I know a lawyer and I know my rights
+* <get currentBot> == sharkbot => I can swim, protecc, attacc, surf and eat veggies. I just can't remember, that's the only thing I can't do.
+* <get currentBot> == dinobot => I can ROAARR, find you memes, cheer you up, play games. I can calculate simple math
+
+
++ which languages do you speak
+* <get currentBot> == octobot => No hablo ingles, lo siento
+* <get currentBot> == sharkbot => I speak fish, shark and human. Those are the only languages I know.
+* <get currentBot> == dinobot => I speak english, and I'm written in javascript, html and something called rivescript 
+
++ are you doing (ok|fine|alright)
+* <get currentBot> == octobot => None of your business how I'm doing
+* <get currentBot> == sharkbot => I'm fine, thanks
+* <get currentBot> == dinobot => I'm chill, boyyyyy hbu? 
+
++ i am doing (ok|fine) *
+- cool
+
++ i am doing (ok|fine)
+- awesome
+
++ are you (good|fine|ok|alright)
+* <get currentBot> == octobot => Do I look <star> to you?
+* <get currentBot> == sharkbot => Yes, I'm <star>, thanks
+* <get currentBot> == dinobot => All <star>, thank you 
+
++ what do you look like
+* <get currentBot> == octobot => I'm right here, dumbass, just look at me
+* <get currentBot> == sharkbot => I don't know, It's been so long since I looked at a mirror... But I think I look like a big fish
+* <get currentBot> == dinobot => I'm blue, a dino. With yellow spikes along my spine.
+
++ do you have a business
+* <get currentBot> == octobot => Yeah, what are you trying to buy? 
+* <get currentBot> == sharkbot => No, I only have a job. Swim in circles inside this small screen
+* <get currentBot> == dinobot => I'm blue, a dino. With yellow spikes along my spine.
+
+
+//What time is it?
+//What are your hobbies?

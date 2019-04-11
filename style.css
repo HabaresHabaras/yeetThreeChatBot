@@ -1,0 +1,24 @@
+#chatBox{
+    position:relative;
+    height:65vh;
+    overflow-y: hidden;
+
+}
+.card{
+    margin-bottom:2vh;
+}
+
+#body{
+background-color:rgba(179, 174, 174, 0.267);
+}
+
+#navbar{
+    margin:4vh;
+    padding:2vh;
+    color:rgb(58, 109, 151);
+}
+#dinoCard{
+    height:35vh;
+    margin-top:4vh;
+    background-color:rgb(181, 213, 223);
+}
