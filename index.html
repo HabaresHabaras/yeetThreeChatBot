@@ -17,19 +17,19 @@
 </head>
 
 <body id="body">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light"id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
     <a class="navbar-brand">Talkbots</a>
     <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link bg-primary text-white" id="dinobot">Dinobot</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="octobot">Octobot</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="sharkbot">Sharkbot</a>
-          </li>
-      </ul>
+      <li class="nav-item">
+        <a class="nav-link bg-primary text-white" id="dinobot">Dinobot</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="octobot">Octobot</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="sharkbot">Sharkbot</a>
+      </li>
+    </ul>
   </nav>
   <div class="container">
     <div class="row">
@@ -44,23 +44,27 @@
 
     <form class="create-form container">
       <div class="row">
-        <div class="form-group col-lg-6 col-md-6 col-sm-6">
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-9">
           <label for="cat">Say something:</label>
           <input type="text" id="ca" name="name">
           <button type="submit" class="btn btn-success">Tell bot</button>
         </div>
+      </div>
 
-        <div class="col-lg-3">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-4">
           <button type="feed" class="btn btn-danger" id="feed">Feed bot </button>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-4">
           <button type="pet" class="btn btn-primary" id="pet">Pet bot </button>
         </div>
-
       </div>
 
-    </form>
+
+  </div>
+
+  </form>
   </div>
 
   <script src="brain.rive"></script>

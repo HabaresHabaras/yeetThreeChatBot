@@ -161,8 +161,8 @@
 - whats up?
 - Hi
 
-+ hello dinobot2000
-- Hey, you remember my name! What's up?
++ hello *
+* <get currentBot> == <star> => Hey, you remember my name! What's up?
 
 
 + what is your favorite color
