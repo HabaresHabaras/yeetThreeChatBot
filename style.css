@@ -37,4 +37,7 @@ background-color:rgba(179, 174, 174, 0.267);
         height:50vh;
         overflow-y: hidden;
     }
+    #endOfPage{
+        margin-bottom:2vh
+    }
   }
