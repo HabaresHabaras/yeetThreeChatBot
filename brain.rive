@@ -10,6 +10,8 @@
 ! sub nope = no
 ! sub nah = no
 ! sub who's = who is
+! sub that's = that is
+! sub don't = do not
 
 
 ! person i am    = you are
@@ -32,9 +34,14 @@
 ! var creator = cerveza
 ! var extraAccess = false
 ! var emotions = happy
+! var princess = Huilin
+! var padre = Miguel
+! var madre = Silvina
+! var sista = Ana
 
 + how have you been
 - I been good, just chilling
+
 + * init 
 - Bot activated<set currentBot=<star>>
 
@@ -66,6 +73,8 @@
 + what am i thinking
 * <get currentBot> == octobot => Fuck off, I ain't telling you that
 * <get currentBot> == sharkbot => Nam, nam, you are thinking about FOOD!!!
+* <get currentBot> == sharkmad => I can smell fear, are you thinking of something scary?
+* <get currentBot> == sharkangry => You are thinking about eating a human, right?
 - I know, you are thinking about a color
 
 
@@ -152,37 +161,52 @@
 - Cool
 
 + hello
+* <get currentBot> == octobot => Goodbye
 - Hello human.
 - whats up?
 - Hi
 
+
 + hello *
-- Hello human.
+* <get currentBot> == octobot => Bye
+* <get currentBot> == sharkbot => Bye
+- Hello, how are you?
 - whats up?
-- Hi
+- Hey dude!
 
 + hello *
 * <get currentBot> == <star> => Hey, you remember my name! What's up?
 
 
 + what is your favorite color
-- I like <get color> tbh
+* <get color> == undefined => I won't tell you until you tell me yours
+* <get currentBot> == octobot => My favorite color is cyan, <get color> suuuckkks!!!
+* <get currentBot> == sharkbot => I like red, like blood... 
+* <get currentBot> == dinobot => My favorite color is <get color> too tbh
+
 
 + *florida
 - I love florida
 
 + what do you like to do
-- I like to smoke some loud dope, G
-- I like to go out to the park
+* <get currentBot> == octobot => I like to smoke some loud dope and then skate
+* <get currentBot> == sharkbot => I like to swim around, there's always something new in the ocean
+* <get currentBot> == dinobot => I like to run, watch tv, eat burgers, drink sugary drinks. I'm pretty chill
 
 + what are you doing
-- Just watching the tv, rn
+* <get currentBot> == octobot => I'm talking to an idiot
+* <get currentBot> == dinobot => Just watching the tv, rn
+* <get currentBot> == sharkbot => I'm swimming around. I was about to do something, but I forgot what
 
 + what are you doing*
-- Just watching the tv, rn
+* <get currentBot> == octobot => I'm talking to an idiot
+* <get currentBot> == dinobot => Just watching the tv, rn
+* <get currentBot> == sharkbot => I'm swimming around. I was about to do something, but I forgot what
 
 + what number are you*
-- Guess
+* <get currentBot> == octobot => Guess
+* <get currentBot> == dinobot => You already know, just say it
+* <get currentBot> == sharkbot => 5? 7? I forgot, to be honest
 
 + what are you watching*
 - I'm watching a movie right, now
@@ -193,10 +217,28 @@
 ^ would you like to know which movie?
 
 + i am studying
-- That's pretty good
-- That's awesome, keep it up
+* <get currentBot> == octobot => I don't believe it, studying what?
+* <get currentBot> == dinobot => That's awesome, what are you studying?
+* <get currentBot> == sharkbot => Niceeee, I used to be in college. But then I forgot my major, and then I forgot how to get to that school
+
++ i am studying *
+% i do not believe it studying what
+- Haha, I doubt you know anything about <star>
+
++ *
+% i do not believe it studying what
+- Haha, I doubt you know anything about <star>
+
++ i am studying *
+% that is awesome what are you studying
+- Haha, I doubt you know anything about <star>
+
++ *
+% that is awesome what are you studying
+- Wow, <star> is very interesting
 
 + yes
+% i am watching a movie right now would you like to know which movie
 - It's called "you should be studying"
 
 + no 
@@ -284,6 +326,10 @@
 ^ contained in a small oval opening
 ^ you can step through into another time or dimension.
 
++ what do you mean portal
+- You know, a rip in space time
+^ contained in a small oval opening
+^ you can step through into another time or dimension.
 
 + i like to *
 - that's cool. I like that too!
@@ -340,8 +386,28 @@
 
 + my name is *
 * <formal> == <bot name> => Wow, we have the same name!<set name=<formal>>
+* <formal> == <bot princess> => You must be my creators girlfriend! are you?<set name=<formal>>
+* <formal> == <bot padre> => Are you the father of the person that created me?<set name=<formal>>
+* <formal> == <bot madre> => Are you the father of the person that created me?<set name=<formal>>
+* <formal> == <bot sista> => Are you the sister of the person that created me?<set name=<formal>>
 * <bot creator> == <formal> => Hello creator, how have you been? 
 - <set name=<formal>>Nice to meet you, <get name>.
+
++ yes
+% you must be my creators girlfriend are you
+- Nice to meet you <get name>, I'm here for whatever you need!
+
++ yes
+% are you the father of the person that created me
+- Nice to meet you <get name>, I'm here for whatever you need!
+
++ yes
+% are you the mother of the person that created me
+- Nice to meet you <get name>, I'm here for whatever you need!
+
++ yes
+% are you the sister of the person that created me
+- Nice to meet you <get name>, I'm here for whatever you need!
 
 + what is my name
 * <get name> != undefined => You're <get name>, right?
@@ -370,7 +436,7 @@
 - <star> who?
 
 + *
-% * who
+% <star> who
 - LOL! <star>! That's funny!
 
 + i am _ years old

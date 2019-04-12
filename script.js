@@ -31,8 +31,14 @@ $(function () {
             creature = "octoPunos";
         } else if (currentBot == "dino") {
             creature = "buenaGente";
-        } else {
+        } else if (currentBot == "dinoRojo") {
+            creature = "dinoRojoAndando";
+        } else if (currentBot == "shark") {
             creature = "sharkSwim";
+        } else if (currentBot == "sharkMad") {
+            creature = "sharkMadSwim";
+        } else if (currentBot == "sharkAngry") {
+            creature = "sharkAngrySwim";
         }
 
         var dinoCard = '<img src="art/' + creature + '.gif" class="card-img-top" alt="...">';
@@ -62,20 +68,20 @@ $(function () {
     $("#feed").click(function () {
         event.preventDefault();
         var haveFood;
-        switch(currentBot){
+        switch (currentBot) {
             case "octo":
-            haveFood = "+1 Garlic bread ball"
-            break;
+                haveFood = "+1 Garlic bread ball"
+                break;
             case "dino":
-            haveFood = "+1 Bacon cheese-steak burger"
-            break;
+                haveFood = "+1 Bacon cheese-steak burger"
+                break;
             case "shark":
-            haveFood = "1+ Samurai sushi roll"
-            break;
+                haveFood = "1+ Samurai sushi roll"
+                break;
         }
 
         userInput = haveFood;
-        var command = "feed "+ currentBot;
+        var command = "feed " + currentBot;
         var reply = bot.reply("local-user", command);
 
         var creature;
@@ -100,6 +106,44 @@ $(function () {
         });
 
     });
+
+    $("#blood").click(function () {
+        event.preventDefault();
+
+        var creature;
+        if (currentBot == "octo") {
+            creature = "octoComiendo";
+        } else if (currentBot == "dino") {
+            creature = "comiendo";
+            currentBot = "dinoRojo";
+        } else if (currentBot == "dinoRojo") {
+            creature = "dinoRojoComiendo";
+            setTimeout(initShark, 200);
+        } else if (currentBot == "shark") {
+            creature = "sharkMadSwim";
+            currentBot = "sharkMad";
+            setTimeout(initShark, 200);
+        } else if (currentBot == "sharkMad") {
+            creature = "sharkMadEat";
+            currentBot = "sharkAngry";
+            setTimeout(initShark, 200);
+        } else if (currentBot == "sharkAngry") {
+            creature = "sharkAngryEat";
+        }
+
+
+        var dinoCard = '<img src="art/' + creature + '.gif" class="card-img-top" alt="...">';
+        $("#dinoCard").html("");
+        $("#dinoCard").append(dinoCard);
+        setTimeout(defaultSettings, 1250);
+    });
+
+    function initShark(){
+        var command = currentBot +" init";
+        var reply = bot.reply("local-user", command);
+        console.log(command);
+    }
+
     $("#pet").click(function () {
         event.preventDefault();
         var petDino = "'You pet dinobot'";
@@ -191,9 +235,14 @@ $(function () {
             creature = "octoHablando";
         } else if (currentBot == "dino") {
             creature = "hablando";
-        } else {
+        } else if (currentBot == "shark") {
             creature = "sharkTalking";
+        } else if (currentBot == "sharkMad") {
+            creature = "sharkMadTeeth";
+        } else if (currentBot == "sharkAngry") {
+            creature = "sharkAngrySwim";
         }
+
 
         var talkDino = '<img src="art/' + creature + '.gif" class="card-img-top" alt="...">';
 
