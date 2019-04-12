@@ -98,9 +98,9 @@ $(function () {
         } else if (currentBot == "shark") {
             creature = "sharkEat";
         } else if (currentBot == "sharkMad") {
-            creature = "sharkMadEating";
+            creature = "sharkMadEat";
         } else if (currentBot == "sharkAngry") {
-            creature = "sharkAngryEating";
+            creature = "sharkAngryEat";
         }
         var dinoCard = '<img src="art/' + creature + '.gif" class="card-img-top" alt="...">';
         $("#dinoCard").html("");
@@ -121,7 +121,7 @@ $(function () {
 
         var creature;
         if (currentBot == "octo") {
-            creature = "octoComiendo";
+            creature = "octoLuminoComiendo";
             currentBot = "octoLumino";
         } else if (currentBot == "octoLumino") {
             creature = "octoLuminoComiendo";
