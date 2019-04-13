@@ -38,7 +38,7 @@ background-color:rgba(179, 174, 174, 0.267);
     }
     #chatBox{
         position:relative;
-        height:45vh;
+        height:48vh;
         overflow-y: hidden;
     }
     #endOfPage{
