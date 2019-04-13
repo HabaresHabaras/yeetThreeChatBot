@@ -23,19 +23,23 @@ $(function () {
 
     var userInput;
     var replyBot;
-    var currentBot = "dino";
+    var currentBot = "dinobot";
 
     function defaultSettings() {
         var creature;
-        if (currentBot == "octo") {
+        if (currentBot == "octobot") {
             creature = "octoPunos";
         } else if (currentBot == "octoLumino") {
             creature = "octoLuminoPunos";
-        } else if (currentBot == "dino") {
+        } else if (currentBot == "octoElectrico") {
+            creature = "octoElectricoPunos";
+        } else if (currentBot == "dinobot") {
             creature = "buenaGente";
         } else if (currentBot == "dinoRojo") {
             creature = "dinoRojoAndando";
-        } else if (currentBot == "shark") {
+        } else if (currentBot == "dinoFuego") {
+            creature = "dinoFuegoAndando";
+        } else if (currentBot == "sharkbot") {
             creature = "sharkSwim";
         } else if (currentBot == "sharkMad") {
             creature = "sharkMadSwim";
@@ -71,13 +75,13 @@ $(function () {
         event.preventDefault();
         var haveFood;
         switch (currentBot) {
-            case "octo":
+            case "octobot":
                 haveFood = "+1 Garlic bread ball"
                 break;
-            case "dino":
+            case "dinobot":
                 haveFood = "+1 Bacon cheese-steak burger"
                 break;
-            case "shark":
+            case "sharkbot":
                 haveFood = "1+ Samurai sushi roll"
                 break;
         }
@@ -87,15 +91,19 @@ $(function () {
         var reply = bot.reply("local-user", command);
 
         var creature;
-        if (currentBot == "octo") {
+        if (currentBot == "octobot") {
             creature = "octoComiendo";
         } else if (currentBot == "octoLumino") {
             creature = "octoLuminoComiendo";
-        } else if (currentBot == "dino") {
+        } else if (currentBot == "octoElectrico") {
+            creature = "octoElectricoComiendo";
+        } else if (currentBot == "dinobot") {
             creature = "comiendo";
         } else if (currentBot == "dinoRojo") {
             creature = "dinoRojoComiendo";
-        } else if (currentBot == "shark") {
+        } else if (currentBot == "dinoFuego") {
+            creature = "dinoFuegoComiendo";
+        } else if (currentBot == "sharkbot") {
             creature = "sharkEat";
         } else if (currentBot == "sharkMad") {
             creature = "sharkMadEat";
@@ -120,25 +128,33 @@ $(function () {
         event.preventDefault();
 
         var creature;
-        if (currentBot == "octo") {
+        if (currentBot == "octobot") {
             creature = "octoLuminoComiendo";
             currentBot = "octoLumino";
+            setTimeout(initShark, 50);
         } else if (currentBot == "octoLumino") {
             creature = "octoLuminoComiendo";
-        } else if (currentBot == "dino") {
+            currentBot = "octoElectrico";
+            setTimeout(initShark, 50);
+        } else if (currentBot == "dinobot") {
             creature = "comiendo";
             currentBot = "dinoRojo";
+            setTimeout(initShark, 50);
         } else if (currentBot == "dinoRojo") {
             creature = "dinoRojoComiendo";
-            setTimeout(initShark, 200);
-        } else if (currentBot == "shark") {
+            currentBot = "dinoFuego";
+            setTimeout(initShark, 50);
+        } else if (currentBot == "dinoFuego") {
+            creature = "dinoFuegoComiendo";
+            currentBot = "dinoRojo";
+        } else if (currentBot == "sharkbot") {
             creature = "sharkMadSwim";
             currentBot = "sharkMad";
-            setTimeout(initShark, 200);
+            setTimeout(initShark, 50);
         } else if (currentBot == "sharkMad") {
             creature = "sharkMadEat";
             currentBot = "sharkAngry";
-            setTimeout(initShark, 200);
+            setTimeout(initShark, 100);
         } else if (currentBot == "sharkAngry") {
             creature = "sharkAngryEat";
         }
@@ -160,7 +176,7 @@ $(function () {
         event.preventDefault();
         var petDino = "'You pet dinobot'";
         userInput = petDino;
-        var command = "pet dino"
+        var command = "pet dinobot"
         var reply = bot.reply("local-user", command);
 
         reply.then(function (result) {
@@ -181,7 +197,7 @@ $(function () {
             console.log(command);
         });
 
-        currentBot = "octo";
+        currentBot = "octobot";
         event.preventDefault();
         var dinoCard = '<img src="art/octoPunos.gif" class="card-img-top" alt="...">';
         $("#dinoCard").html("");
@@ -201,7 +217,7 @@ $(function () {
             console.log(command);
         });
 
-        currentBot = "dino";
+        currentBot = "dinobot";
         eraseChatBox();
     });
 
@@ -216,7 +232,7 @@ $(function () {
             console.log(command);
         });
 
-        currentBot = "shark";
+        currentBot = "sharkbot";
         eraseChatBox();
     });
 
@@ -226,7 +242,7 @@ $(function () {
     }
 
     function defaultDino() {
-        currentBot = "dino";
+        currentBot = "dinobot";
         defaultSettings();
 
         var command = "dinobot init";
@@ -243,15 +259,21 @@ $(function () {
         // $("#dinoCard").append(dinoCard);
         setTimeout(appendBotRes, 1500);
         var creature;
-        if (currentBot == "octo") {
+        if (currentBot == "octobot") {
             creature = "octoHablando";
         } else if (currentBot == "octoLumino") {
             creature = "octoLuminoHablando";
-        } else if (currentBot == "dino") {
+        } else if (currentBot == "octoLumino") {
+            creature = "octoLuminoHablando";
+        } else if (currentBot == "octoElectrico") {
+            creature = "octoElectricoHablando";
+        } else if (currentBot == "dinobot") {
             creature = "hablando";
         } else if (currentBot == "dinoRojo") {
             creature = "dinoRojoHablando";
-        } else if (currentBot == "shark") {
+        } else if (currentBot == "dinoFuego") {
+            creature = "dinoFuegoHablando";
+        } else if (currentBot == "sharkbot") {
             creature = "sharkTalking";
         } else if (currentBot == "sharkMad") {
             creature = "sharkMadTeeth";

@@ -71,12 +71,11 @@
 - yeah
 
 + what am i thinking
-* <get currentBot> == octobot => Fuck off, I ain't telling you that
+* <get currentBot> == octobot => Fuck off, I ain't telling you thatr
 * <get currentBot> == sharkbot => Nam, nam, you are thinking about FOOD!!!
 * <get currentBot> == sharkmad => I can smell fear, are you thinking of something scary?
 * <get currentBot> == sharkangry => You are thinking about eating a human, right?
 - I know, you are thinking about a color
-
 
 + do you have a family
 * <get currentBot> == octobot => I don't answer personal questions
@@ -162,7 +161,12 @@
 
 + hello
 * <get currentBot> == octobot => Goodbye
-- Hello human.
+* <get currentBot> == octolumino => Get lost, please...
+* <get currentBot> == dinobot => Hey! What's up? My name is Dinobot, what's yours?
+* <get currentBot> == dinorojo => Hey, hey, hey. What's upp?
+* <get currentBot> == sharkbot => Hello!! Do I know you?
+* <get currentBot> == sharkmad => Hello... Come closer, I want to talk
+* <get currentBot> == sharkangry => BWAHAHAHAHHA, hello human, you look delicious
 - whats up?
 - Hi
 
@@ -297,7 +301,7 @@
 - I'm in your computer's files
 ^ and I just found your "secret" folder...
 ^ I hope your mom doesn't find it ;(
-- I'm just chilling in my home, talking to you,
+- I'm just chilling in my home, talking to you
 ^ where are you?
 - Just chilling, home, hbu?
 
