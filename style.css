@@ -29,7 +29,7 @@ background-color:rgba(179, 174, 174, 0.267);
 @media only screen and (max-width: 600px) {
     #dinoCard{
         margin-top:1vh;
-        height:15vh;
+        height:20vh;
     }
     #navbar{
         margin:1vh;
@@ -37,7 +37,25 @@ background-color:rgba(179, 174, 174, 0.267);
     }
     #chatBox{
         position:relative;
-        height:50vh;
+        height:42vh;
+        overflow-y: hidden;
+    }
+    #endOfPage{
+        margin-bottom:2vh
+    }
+  }
+  @media only screen and (max-width: 750px) {
+    #dinoCard{
+        margin-top:1vh;
+        height:30vh;
+    }
+    #navbar{
+        margin:1vh;
+        padding:1vh;
+    }
+    #chatBox{
+        position:relative;
+        height:35vh;
         overflow-y: hidden;
     }
     #endOfPage{
