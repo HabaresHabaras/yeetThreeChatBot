@@ -41,6 +41,7 @@
 
 + how have you been
 - I been good, just chilling
+- I've been, hbu?
 
 + * init 
 - Bot activated<set currentBot=<star>>
@@ -49,7 +50,14 @@
 - <set num=<star>>
 
 + how * your day
-- It was a good day, thanks
+* <get currentBot> == octobot => Do you really wanna know that?
+* <get currentBot> == dinobot => Very good, how about yours?
+* <get currentBot> == sharkbot => It was a good day, thanks
+* <get currentBot> == octolumino => It sucked
+* <get currentBot> == dinorojo => Pretty good, hbu?
+* <get currentBot> == sharkangry => I've been very hungry, until just now
+* <get currentBot> == sharkmad => It was good, yours too?
+* <get currentBot> == octoelectrico => Excellent, Pbbbblrrrrr.
 
 
 + give me extra access
@@ -72,7 +80,7 @@
 
 + what am i thinking
 * <get currentBot> == octobot => I ain't telling you that
-* <get currentBot> == octoelectric => That's a dumb question
+* <get currentBot> == octoelectrico => That's a dumb question
 * <get currentBot> == octolumino => Get lost!
 * <get currentBot> == dinobot => Are you thinking about a dinosaur?
 * <get currentBot> == sharkbot => Nam, nam, you are thinking about FOOD!!!
@@ -82,9 +90,12 @@
 
 + do you have a family
 * <get currentBot> == octobot => I don't answer personal questions
-* <get currentBot> == sharkbot => No idea, I just remember waking up one day inside this place
+* <get currentBot> == octolumino => I don't answer personal questions
+* <get currentBot> == octoelectrico => I don't answer personal questions
+* <get currentBot> == sharkbot => I have a mom. She is cruising the pacific 
+* <get currentBot> == sharkmad => My moma, what you want with her?
+* <get currentBot> == sharkangry => My mom, I miss her. Come here give me a hug ;(
 - Yeah, I stopped seeing them a while ago. Now it's just me
-
 
 + my favorite color is *
 - <set color=<star>>Oh, I love <get color> too!
@@ -95,10 +106,42 @@
 * <star> == <get num> => you got it! That's exactly the number I was thinking about
 
 + tell me about you
-- I was raised in the dessert
+* <get currenBot> == dinobot => I was raised in the dessert
 ^ it was tough growing up, finding water,
 ^ fighting all kinds of deathly dinosaurs
-^ and all that, but I'm a chill and happy dino no
+^ and all that, but I'm a chill and happy dino now
+* <get currenBot> == dinoRojo => I was raised in the dessert
+^ it was tough growing up, finding water,
+^ fighting all kinds of deathly dinosaurs
+^ and all that, but I'm a chill and happy dino now
+* <get currenBot> == dinoFuego => I was raised in the dessert
+^ it was tough growing up, finding water,
+^ fighting all kinds of deathly dinosaurs
+^ and all that, but I'm a chill and happy dino now
+* <get currenBot> == octobot => I was born inside a glass bottle
+^ in some part of the ocean I can't remember.
+^ The currents brought me here, and now here I am 
+^ talking to an idiot.
+* <get currenBot> == octolumino => I was born inside a glass bottle
+^ in some part of the ocean I can't remember.
+^ The currents brought me here, and now here I am 
+^ talking to an idiot.
+* <get currenBot> == octoelectrico => I was born inside a glass bottle
+^ in some part of the ocean I can't remember.
+^ The currents brought me here, and now here I am 
+^ talking to an idiot.
+* <get currenBot> == sharkbot => I was born inside a glass bottle
+^ in some part of the ocean I can't remember.
+^ The currents brought me here, and now here I am 
+^ talking to an idiot.
+* <get currenBot> == sharkmad => I was born inside a glass bottle
+^ in some part of the ocean I can't remember.
+^ The currents brought me here, and now here I am 
+^ talking to an idiot.
+* <get currenBot> == sharkangry => I was born inside a glass bottle
+^ in some part of the ocean I can't remember.
+^ The currents brought me here, and now here I am 
+^ talking to an idiot.
 
 + what is your name
 * <get name> == undefined => My name is <get currentBot>, what's yours?
@@ -354,16 +397,19 @@
 - I like watching human tv, and eating trash food
 - I like reading, just started a new book
 
-+ *you* *hobbie
-- Yeah, I like to eat human flesh
-- I like watching human tv, and eating trash food
-- I like reading, just started a new book
++ *you* *hobby
+* <get currentBot> == octobot => I like watching human tv, and eating trash food
+* <get currentBot> == dinobot => I like reading, just started a new book
+* <get currentBot> == sharkbot => I like reading, just started a new book
+- I like playing and running
+- I like talking to you
+
 
 + *your hobbies
 - I like watching human tv, and eating trash food
 - I like reading, just started a new book
 
-+ feed (octobot|octolumino|octoelectric)
++ feed (octobot|octolumino|octoelectrico)
 - Stop it, I don't like to be fed
 - WOW, it's delicious
 - Pbbbblrrrrr 
@@ -386,15 +432,27 @@
 % wow tastes good is this vegan
 - Good, it tastes like fish tho.
 
-+ pet dino
++ pet (dinobot|dinorojo|dinofuego)
 - 'Roaaar, roaaaarrrr'- Dinobot is happy.
 - I've always liked you
 - You the best
 
-+ *you* *hobbie
++ pet (octobot|octolumino|octoelectrico)
+- Pbbbblrrrrr
+- Stop that, don't do it again
+- You are invading my space
+
++ pet (sharkbot|sharkmad|sharkangry)
+- Nam, nam. Come closer
+- Hehehe, you are a fun human
+- Blurghhghgh
+
++ *you* *hobby
 * <get currentBot> == octobot => I like watching human tv, and eating trash food
 * <get currentBot> == dinobot => I like reading, just started a new book
-* <get currentBot> == octobot => I like reading, just started a new book
+* <get currentBot> == sharkbot => I like reading, just started a new book
+- I like playing and running
+- I like talking to you
 
 + my name is *
 * <formal> == <bot name> => Wow, we have the same name!<set name=<formal>>

@@ -84,6 +84,25 @@ $(function () {
             case "sharkbot":
                 haveFood = "1+ Samurai sushi roll"
                 break;
+            case "sharkMad":
+                haveFood = "1+ OG sushi roll"
+                break;
+            case "sharkAngry":
+                haveFood = "1+ Big Boss sushi roll"
+                break;
+             case "octoLumino":
+                haveFood = "1+ Garlic Foam-Bun"
+                break;
+            case "octoElectrico":
+                haveFood = "1+ Fried yuca ball"
+                break;
+            case "dinoRojo":
+                haveFood = "1+ Triple-whooping filet mignon burger"
+                break;
+            case "dinoFuego":
+                haveFood = "1+ Wagyu beef burger"
+                break;
+
         }
 
         userInput = haveFood;
@@ -174,9 +193,9 @@ $(function () {
 
     $("#pet").click(function () {
         event.preventDefault();
-        var petDino = "'You pet dinobot'";
+        var petDino = "'You play with your pet'";
         userInput = petDino;
-        var command = "pet dinobot"
+        var command = "pet " + currentBot
         var reply = bot.reply("local-user", command);
 
         reply.then(function (result) {
@@ -261,8 +280,6 @@ $(function () {
         var creature;
         if (currentBot == "octobot") {
             creature = "octoHablando";
-        } else if (currentBot == "octoLumino") {
-            creature = "octoLuminoHablando";
         } else if (currentBot == "octoLumino") {
             creature = "octoLuminoHablando";
         } else if (currentBot == "octoElectrico") {
