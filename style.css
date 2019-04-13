@@ -29,7 +29,8 @@ background-color:rgba(179, 174, 174, 0.267);
 @media only screen and (max-width: 600px) {
     #dinoCard{
         margin-top:1vh;
-        height:20vh;
+        height:26vh;
+        margin: 1vh;
     }
     #navbar{
         margin:1vh;
