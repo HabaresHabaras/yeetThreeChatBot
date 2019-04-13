@@ -148,6 +148,12 @@
 - My name is <get currentBot>, <get name>.
 
 + how are you
+* <get currenBot> == sharkbot => A bit hungry, how about you?
+* <get currenBot> == sharkangry => Very hungry, and very angry. How about you?
+* <get currenBot> == sharkmad => Getting hungrier, do you have anything to eat? 
+* <get currenBot> == octobot => I'm feeling worse with every word you say
+* <get currenBot> == octolumino => A bit annoyed
+* <get currenBot> == octoelectrico => Just chillin', I have a lot of energy today
 - I'm doing pretty good
 - fine, how about you
 - I'm all good man
@@ -185,11 +191,15 @@
 - Umm... "<person>"
 
 + how are you*
-- I'm doing pretty good
-- fine, how about you
-- It's all good man
+@ how are you
 
 + i (like|love) the color *
+* <get currenBot == octobot" => What made you think I was interested in knowing that?
+* <get currenBot> == octolumino => Am I a joke to you?
+* <get currenBot> == sharkbot => cool, I don't see colors very well, but I can feel them, especially red.
+* <get currentBot> == sharkangry => I only see red, It's all I want.
+* <get currentBot> == sharkmad => Very good choice.
+* <get currentBot> == octoelectrico => That's great
 - That's cool, I like <star> too
 - <star> is a very decent color
 - Nice, me too
@@ -200,12 +210,18 @@
 - cool
 
 + i am fine*
+* <get currentBot> == octobot => why are you telling me this?
+* <get currentBot> == octolumino => Great, again, not interested
+* <get currentBot> == octoelectrico => Please, go away, not interested
 - That's awesome, I'm glad
 - That's pretty cool
 - Niceeee
 
 + what color is my (red|blue|green|yellow) *
-- Your <star2> is <star1>, silly!
+* <get currenBot> == octobot => Your <star2> is <star1>, am I a joke to you?!
+* <get currenBot> == octolumino => Your <star2> is <star1>, am I a joke to you?!
+* <get currenBot> == octoelectrico => Your <star2> is <star1>, am I a joke to you?!
+- Your <star2> is <star1>!
 
 + i am fine
 - Cool
@@ -214,30 +230,38 @@
 * <get currentBot> == octobot => Goodbye
 * <get currentBot> == octolumino => Get lost, please...
 * <get currentBot> == dinobot => Hey! What's up? My name is Dinobot, what's yours?
-* <get currentBot> == dinorojo => Hey, hey, hey. What's upp?
 * <get currentBot> == sharkbot => Hello!! Do I know you?
 * <get currentBot> == sharkmad => Hello... Come closer, I want to talk
 * <get currentBot> == sharkangry => BWAHAHAHAHHA, hello human, you look delicious
 - whats up?
 - Hi
+- Hey
+- Hey, hey, hey!
 
-
-+ hello *
-* <get currentBot> == octobot => Bye
-* <get currentBot> == sharkbot => Bye
-- Hello, how are you?
-- whats up?
-- Hey dude!
 
 + hello *
 * <get currentBot> == <star> => Hey, you remember my name! What's up?
+* <get currentBot> == octobot => Bye
+* <get currentBot> == octolumino => Goodbye
+* <get currenBot> == octoelectrico => Please leave, you are being so annoying
+* <get currenBot> == sharkbot => Hello, my name is Sharkbot, I just lost something
+- Hello, how are you?
+- whats up?
+- Hello, my name is Dinobot, what's yours?
 
++ what
+% hello my name is sharkbot i just lost something
+- I just lost my memory
 
 + what is your favorite color
 * <get color> == undefined => I won't tell you until you tell me yours
-* <get currentBot> == octobot => My favorite color is cyan, <get color> suuuckkks!!!
+* <get currentBot> == octobot => My favorite color is yellow, <get color> suuuckkks!!!
 * <get currentBot> == sharkbot => I like red, like blood... 
-* <get currentBot> == dinobot => My favorite color is <get color> too tbh
+* <get currentBot> == sharkmad => I like red, like blood... 
+* <get currentBot> == sharkangry => I like red, like blood... 
+* <get currentBot> == octolumino => My favorite color is yellow, <get color> suuuckkks!!!
+* <get currentBot> == octoelectrico => My favorite color is yellow, <get color> suuuckkks!!!
+- My favorite color is <get color> too tbh
 
 
 + *florida
@@ -245,8 +269,8 @@
 
 + what do you like to do
 * <get currentBot> == octobot => I like to smoke some loud dope and then skate
-* <get currentBot> == sharkbot => I like to swim around, there's always something new in the ocean
 * <get currentBot> == dinobot => I like to run, watch tv, eat burgers, drink sugary drinks. I'm pretty chill
+- I like to swim around, there's always something new in the ocean
 
 + what are you doing
 * <get currentBot> == octobot => I'm talking to an idiot
