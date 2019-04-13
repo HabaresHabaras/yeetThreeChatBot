@@ -124,7 +124,7 @@ $(function () {
 
     });
 
-    $("#blood").click(function () {
+    $("#evolve").click(function () {
         event.preventDefault();
 
         var creature;

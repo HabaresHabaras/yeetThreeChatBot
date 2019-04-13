@@ -71,7 +71,10 @@
 - yeah
 
 + what am i thinking
-* <get currentBot> == octobot => Fuck off, I ain't telling you thatr
+* <get currentBot> == octobot => I ain't telling you that
+* <get currentBot> == octoelectric => That's a dumb question
+* <get currentBot> == octolumino => Get lost!
+* <get currentBot> == dinobot => Are you thinking about a dinosaur?
 * <get currentBot> == sharkbot => Nam, nam, you are thinking about FOOD!!!
 * <get currentBot> == sharkmad => I can smell fear, are you thinking of something scary?
 * <get currentBot> == sharkangry => You are thinking about eating a human, right?
@@ -117,6 +120,11 @@
 - Please don't repeat yourself.
 - I feel so embarrassed of you
 
++ yes
+- bet
+
++ no
+- bet
 
 + why
 % i feel so embarrassed of you
